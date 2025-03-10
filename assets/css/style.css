@@ -1,0 +1,29 @@
+/* assets/css/styles.css */
+.newsify-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.newsify-post {
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+
+.newsify-pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.newsify-pagination .page-numbers {
+    padding: 5px 10px;
+    margin: 0 2px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+}
+
+.newsify-pagination .page-numbers.current {
+    background-color: #0073aa;
+    color: #fff;
+    border-color: #0073aa;
+}
