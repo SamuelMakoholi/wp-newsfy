@@ -5,6 +5,8 @@ class Newsify_Shortcode {
     public function __construct($fetcher) {
         $this->fetcher = $fetcher;
         add_shortcode('newsify', [$this, 'render_shortcode']);
+        //put some comments
+        
     }
 
     public function render_shortcode($atts) {
