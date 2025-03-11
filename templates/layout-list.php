@@ -1,29 +1,33 @@
-<?php if ($query->have_posts()) : ?>
-    <div class="newsify-list">
-        <?php while ($query->have_posts()) : $query->the_post(); ?>
-            <div class="newsify-post">
-                <!-- Post Thumbnail -->
-                <?php if (has_post_thumbnail()) : ?>
-                    <div class="newsify-post-thumbnail">
-                        <?php the_post_thumbnail('thumbnail'); ?>
-                    </div>
-                <?php endif; ?>
-
-                <!-- Post Title -->
-                <h3 class="newsify-post-title">
-                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                </h3>
-
-                <!-- Post Excerpt -->
-                <div class="newsify-post-excerpt">
-                    <?php the_excerpt(); ?>
+<?php
+if ($query->have_posts()) {
+    echo '<div class="newsify-list">'; // List container
+    while ($query->have_posts()) {
+        $query->the_post();
+?>
+        <div class="newsify-list-item"> <!-- List item -->
+            <a href="<?php the_permalink(); ?>" class="newsify-list-image"> <!-- Image -->
+                <?php if (has_post_thumbnail()) {
+                    the_post_thumbnail('medium');
+                } else {
+                    echo '<img src="http://localhost/research-and-innovation/wp-content/uploads/2025/03/default-post.png" alt="Default News Image">';
+                }
+                ?>
+            </a>
+            <div class="newsify-list-content"> <!-- Content -->
+                <div class="newsify-list-meta"> <!-- Meta -->
+                    <span class="newsify-list-date"><?php echo get_the_date('F j, Y'); ?></span>
+                    <span class="newsify-list-separator"> / </span>
+                    <span class="newsify-list-category"><?php echo get_the_category_list(', '); ?></span>
                 </div>
-
-                <!-- Read More Link -->
-                <a class="newsify-read-more" href="<?php the_permalink(); ?>">Read More</a>
+                <h4 class="newsify-list-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                <div class="newsify-list-excerpt"><?php the_excerpt(); ?></div>
+                <a href="<?php the_permalink(); ?>" class="newsify-list-read-more">Read More</a>
             </div>
-        <?php endwhile; ?>
-    </div>
-<?php else : ?>
-    <p>No news posts found.</p>
-<?php endif; ?>
+        </div>
+<?php
+    }
+    echo '</div>';
+    wp_reset_postdata();
+} else {
+    echo '<p>No news available.</p>';
+}
