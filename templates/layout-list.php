@@ -9,7 +9,8 @@ if ($query->have_posts()) {
                 <?php if (has_post_thumbnail()) {
                     the_post_thumbnail('medium');
                 } else {
-                    echo '<img src="http://localhost/research-and-innovation/wp-content/uploads/2025/03/default-post.png" alt="Default News Image">';
+                    // Use the default image from the plugin directory
+                    echo '<img src="' . plugin_dir_url(dirname(__FILE__)) . 'assets/images/default-post.png" alt="Post News Image">';
                 }
                 ?>
             </a>
