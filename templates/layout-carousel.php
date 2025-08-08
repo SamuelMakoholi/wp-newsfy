@@ -3,11 +3,14 @@
         <?php while ($query->have_posts()) : $query->the_post(); ?>
             <div class="newsify-post">
                 <!-- Post Thumbnail -->
-                <?php if (has_post_thumbnail()) : ?>
-                    <div class="newsify-post-thumbnail">
+                <div class="newsify-post-thumbnail">
+                    <?php if (has_post_thumbnail()) : ?>
                         <?php the_post_thumbnail('medium'); ?>
-                    </div>
-                <?php endif; ?>
+                    <?php else: ?>
+                        <!-- Use the default image from the plugin directory -->
+                        <img src="<?php echo plugin_dir_url(dirname(__FILE__)); ?>assets/images/default-post.png" alt="Post News Image">
+                    <?php endif; ?>
+                </div>
 
                 <!-- Post Title -->
                 <h3 class="newsify-post-title">

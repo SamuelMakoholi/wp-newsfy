@@ -1,0 +1,85 @@
+/* Admin Styles */
+.newsify-settings {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.newsify-settings h1 {
+    color: #0073aa;
+    margin-bottom: 20px;
+}
+
+.newsify-shortcode-guide {
+    margin-bottom: 30px;
+}
+
+.newsify-shortcode-guide table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.newsify-shortcode-guide th,
+.newsify-shortcode-guide td {
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+.newsify-shortcode-guide th {
+    background: #f9f9f9;
+    font-weight: bold;
+}
+
+.newsify-shortcode-guide code {
+    background: #f1f1f1;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: monospace;
+}
+
+.newsify-usage-instructions {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.newsify-usage-instructions h2 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #0073aa;
+}
+
+.newsify-usage-instructions ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.newsify-usage-instructions li {
+    margin-bottom: 10px;
+}
+
+.newsify-dashboard-widget {
+    font-size: 14px;
+}
+
+.newsify-dashboard-widget ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.newsify-dashboard-widget li {
+    margin-bottom: 10px;
+}
+
+.newsify-dashboard-widget a {
+    color: #0073aa;
+    text-decoration: none;
+}
+
+.newsify-dashboard-widget a:hover {
+    text-decoration: underline;
+}

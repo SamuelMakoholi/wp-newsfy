@@ -34,37 +34,49 @@ class Newsify_Admin {
     // Render the settings page
     public function render_settings_page() {
         ?>
-        <div class="wrap">
+        <div class="wrap newsify-settings">
             <h1>Newsify Settings</h1>
-            <p>Welcome to the Newsify plugin settings page. Here are the available shortcodes:</p>
+            <p>Welcome to the Newsify plugin settings page. Here are the available shortcodes and their usage:</p>
 
-            <h2>Shortcodes</h2>
-            <table class="wp-list-table widefat fixed striped">
-                <thead>
-                    <tr>
-                        <th>Shortcode</th>
-                        <th>Description</th>
-                        <th>Example</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><code>[newsify]</code></td>
-                        <td>Displays news posts in a grid layout.</td>
-                        <td><code>[newsify layout="grid" posts_per_page="5"]</code></td>
-                    </tr>
-                    <tr>
-                        <td><code>[newsify]</code></td>
-                        <td>Displays news posts in a list layout.</td>
-                        <td><code>[newsify layout="list" posts_per_page="3"]</code></td>
-                    </tr>
-                    <tr>
-                        <td><code>[newsify]</code></td>
-                        <td>Displays news posts in a carousel layout.</td>
-                        <td><code>[newsify layout="carousel" posts_per_page="4"]</code></td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="newsify-shortcode-guide">
+                <h2>Shortcode Guide</h2>
+                <table class="wp-list-table widefat fixed striped">
+                    <thead>
+                        <tr>
+                            <th>Shortcode</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>[newsify]</code></td>
+                            <td>Displays news posts in a grid layout.</td>
+                            <td><code>[newsify layout="grid" posts_per_page="5" category="technology"]</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>[newsify]</code></td>
+                            <td>Displays news posts in a list layout.</td>
+                            <td><code>[newsify layout="list" posts_per_page="3" category="business"]</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>[newsify]</code></td>
+                            <td>Displays news posts in a carousel layout.</td>
+                            <td><code>[newsify layout="carousel" posts_per_page="4" category="news"]</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="newsify-usage-instructions">
+                <h2>Usage Instructions</h2>
+                <p>Use the following attributes to customize the shortcode:</p>
+                <ul>
+                    <li><strong>layout</strong>: Choose between <code>grid</code>, <code>list</code>, or <code>carousel</code>.</li>
+                    <li><strong>posts_per_page</strong>: Set the number of posts to display (default is 5).</li>
+                    <li><strong>category</strong>: Specify the category slug to filter posts (optional).</li>
+                </ul>
+            </div>
         </div>
         <?php
     }
@@ -88,13 +100,15 @@ class Newsify_Admin {
     // Render the dashboard widget content
     public function render_dashboard_widget_content() {
         ?>
-        <p>Here are the available shortcodes for the Newsify plugin:</p>
-        <ul>
-            <li><code>[newsify layout="grid" posts_per_page="5"]</code> - Displays posts in a grid layout.</li>
-            <li><code>[newsify layout="list" posts_per_page="3"]</code> - Displays posts in a list layout.</li>
-            <li><code>[newsify layout="carousel" posts_per_page="4"]</code> - Displays posts in a carousel layout.</li>
-        </ul>
-        <p>For more details, visit the <a href="<?php echo admin_url('admin.php?page=newsify-settings'); ?>">Newsify Settings</a> page.</p>
+        <div class="newsify-dashboard-widget">
+            <p>Here are the available shortcodes for the Newsify plugin:</p>
+            <ul>
+                <li><code>[newsify layout="grid" posts_per_page="5" category="technology"]</code> - Displays posts in a grid layout.</li>
+                <li><code>[newsify layout="list" posts_per_page="3" category="business"]</code> - Displays posts in a list layout.</li>
+                <li><code>[newsify layout="carousel" posts_per_page="4" category="news"]</code> - Displays posts in a carousel layout.</li>
+            </ul>
+            <p>For more details, visit the <a href="<?php echo admin_url('admin.php?page=newsify-settings'); ?>">Newsify Settings</a> page.</p>
+        </div>
         <?php
     }
 
