@@ -1,4 +1,7 @@
 <?php
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
+}
 if ($query->have_posts()) {
     echo '<div class="newsify-widget">';
     while ($query->have_posts()) {

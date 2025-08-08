@@ -35,6 +35,18 @@ function newsify_enqueue_assets() {
             true // Load in footer
         );
     } 
+    
+    // Enqueue Masonry JS
+    $masonry_js_file = plugin_dir_path(__FILE__) . 'assets/js/masonry.js';
+    if (file_exists($masonry_js_file)) {
+        wp_enqueue_script(
+            'newsify-masonry', // Handle
+            plugin_dir_url(__FILE__) . 'assets/js/masonry.js', // JS file URL
+            [], // No dependencies
+            filemtime($masonry_js_file), 
+            true // Load in footer
+        );
+    }
 }
 add_action('wp_enqueue_scripts', 'newsify_enqueue_assets');
 
